@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://bi3dnbop5hfud"]
+
+[ext_resource type="PackedScene" uid="uid://d1gedk8oy6ty6" path="res://Scenary/Grid.tscn" id="1_bfhg0"]
+[ext_resource type="Script" path="res://Scripts/Main.gd" id="1_xswjk"]
+[ext_resource type="PackedScene" uid="uid://2x3bpsc5a0p4" path="res://Scenary/Unit.tscn" id="3_gv83g"]
+[ext_resource type="PackedScene" uid="uid://goxb66mj6eit" path="res://Scenary/Soldier.tscn" id="4_8tp7u"]
+[ext_resource type="Script" path="res://Scripts/GameManager.gd" id="5_qw28r"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_xswjk")
+
+[node name="Grid" parent="." instance=ExtResource("1_bfhg0")]
+
+[node name="UnitManager" type="Node" parent="."]
+
+[node name="TestUnit2" parent="UnitManager" instance=ExtResource("3_gv83g")]
+position = Vector2(-258, 24)
+
+[node name="Unit" parent="UnitManager" instance=ExtResource("4_8tp7u")]
+
+[node name="TurnManager" type="Node" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("5_qw28r")

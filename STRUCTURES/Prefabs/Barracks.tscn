@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://cma7mi63rlp1s"]
+
+[ext_resource type="Texture2D" uid="uid://dm14q3e0pj2jx" path="res://icon.svg" id="1_ls0wi"]
+[ext_resource type="Script" path="res://STRUCTURES/Scripts/barracks.gd" id="1_ne42h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xmyk"]
+atlas = ExtResource("1_ls0wi")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fp6ar"]
+atlas = ExtResource("1_ls0wi")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5eg8"]
+atlas = ExtResource("1_ls0wi")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0v1a"]
+atlas = ExtResource("1_ls0wi")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jyiqs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xmyk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fp6ar")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5eg8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r0v1a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ocelu"]
+size = Vector2(64, 64)
+
+[node name="Barracks" type="Node2D" groups=["edificios"]]
+script = ExtResource("1_ne42h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jyiqs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["edificios"]]
+shape = SubResource("RectangleShape2D_ocelu")

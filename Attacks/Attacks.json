@@ -1,0 +1,30 @@
+{
+  "Blaster": {
+	"name": "Blaster",
+	"damage": 5,
+	"range": 5,
+	"energy_cost": 10,
+	"area_size": 1
+  },
+  "Riel": {
+	"name": "Riel",
+	"damage": 50,
+	"range": 4,
+	"energy_cost": 70,
+	"area_size": 1
+  },
+"Llama": {
+  "name": "Llama",
+  "damage": 30,
+  "range": 2,
+  "energy_cost": 50,
+  "area_size": 3
+  },
+"Nukeeee": {
+  "name": "Nukeeee!",
+  "damage": 30000,
+  "range": 1,
+  "energy_cost": 1,
+  "area_size": 30
+  }
+}

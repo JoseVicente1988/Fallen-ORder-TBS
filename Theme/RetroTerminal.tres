@@ -1,0 +1,16 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bp2p2dityi27m"]
+
+[ext_resource type="FontFile" uid="uid://dlxd4b0f1uysu" path="res://Theme/abduction2002.ttf" id="1_xqhx5"]
+
+[resource]
+default_font = ExtResource("1_xqhx5")
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_focus_color = Color(0.798419, 0.965747, 0.855204, 1)
+Label/colors/font_color = Color(0.586646, 0.980101, 0.682418, 1)
+Label/constants/outline_size = 2
+Label/fonts/font = ExtResource("1_xqhx5")
+LineEdit/colors/font_color = Color(0.586646, 0.980101, 0.682418, 1)
+TextEdit/colors/font_color = Color(0.132995, 0.83765, 0.378774, 1)
+TextEdit/colors/font_outline_color = Color(0.290196, 0.682353, 0.513726, 0.627451)
+TextEdit/constants/outline_size = 0
+TextEdit/fonts/font = ExtResource("1_xqhx5")

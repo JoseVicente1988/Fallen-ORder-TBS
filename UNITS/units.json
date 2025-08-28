@@ -1,0 +1,33 @@
+{
+   "soldier": {
+	  "name":"Soldado",
+	  "max_action_points": 100,
+	  "move_cost_per_tile": 10,
+	  "hp": 100,
+	  "ignora_obstaculos": false,
+	  "sprite_frames_path": "res://UNITS/Sprites/wALKER/spriteS/walker.tres",
+	  "light_attack": "Blaster",
+	  "heavy_attack": "Riel"
+	},
+  "flamethrower": {
+	"name":"Lanzallamas",
+	"max_action_points": 80,
+	"move_cost_per_tile": 10,
+	"move_range": 20,
+	"hp": 100,
+	"ignora_obstaculos": true,
+	"sprite_frames_path": "res://UNITS/soldier_frames.tres",
+	"light_attack": "Llama",
+	"heavy_attack": "Riel"
+  },
+  "nuke": {
+	"name":"PortaNukes",
+	"max_action_points": 8000,
+	"move_cost_per_tile": 1,
+	"hp": 10000,
+	"ignora_obstaculos": true,
+	"sprite_frames_path": "res://UNITS/soldier_frames.tres",
+	"light_attack": "Llama",
+	"heavy_attack": "Nukeeee"
+  }
+}

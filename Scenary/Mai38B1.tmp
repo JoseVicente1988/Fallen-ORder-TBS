@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://bi3dnbop5hfud"]
+
+[ext_resource type="PackedScene" uid="uid://d1gedk8oy6ty6" path="res://Scenary/Grid.tscn" id="1_bfhg0"]
+[ext_resource type="Script" path="res://Scripts/Main.gd" id="1_xswjk"]
+[ext_resource type="PackedScene" uid="uid://2x3bpsc5a0p4" path="res://Scenary/Unit.tscn" id="3_gv83g"]
+[ext_resource type="PackedScene" uid="uid://goxb66mj6eit" path="res://Scenary/Soldier.tscn" id="4_8tp7u"]
+[ext_resource type="Script" path="res://Scripts/UnitLoader.gd" id="5_gw3gh"]
+[ext_resource type="Script" path="res://Scripts/GameManager.gd" id="5_qw28r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48g3j"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_xswjk")
+
+[node name="Grid" parent="." instance=ExtResource("1_bfhg0")]
+
+[node name="UnitManager" type="Node" parent="."]
+
+[node name="Soldado" parent="UnitManager" groups=["unidades_aliadas"] instance=ExtResource("3_gv83g")]
+position = Vector2(-258, 24)
+
+[node name="Soldado2" parent="UnitManager" groups=["unidades_enemigas"] instance=ExtResource("3_gv83g")]
+position = Vector2(-150, 50)
+
+[node name="Soldado3" parent="UnitManager" instance=ExtResource("4_8tp7u")]
+
+[node name="Soldado4" parent="UnitManager" instance=ExtResource("4_8tp7u")]
+position = Vector2(100, 0)
+
+[node name="UnitLoader" type="Node" parent="."]
+script = ExtResource("5_gw3gh")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -95.0
+offset_right = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/UI/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/fill = SubResource("StyleBoxFlat_48g3j")
+
+[node name="EndTurn" type="Button" parent="CanvasLayer/UI/VBoxContainer"]
+layout_mode = 2
+text = "End Turn"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("5_qw28r")
+
+[connection signal="button_down" from="CanvasLayer/UI/VBoxContainer/EndTurn" to="." method="_on_end_turn_button_down"]

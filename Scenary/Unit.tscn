@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://2x3bpsc5a0p4"]
+
+[ext_resource type="Script" path="res://Scripts/Unit.gd" id="1_ealp8"]
+[ext_resource type="SpriteFrames" uid="uid://db018ubbvasgi" path="res://UNITS/Sprites/wALKER/spriteS/walker.tres" id="2_3f206"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hosil"]
+size = Vector2(50, 50)
+
+[node name="Unit" type="CharacterBody2D"]
+y_sort_enabled = true
+script = ExtResource("1_ealp8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hosil")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -21)
+scale = Vector2(0.35, 0.35)
+sprite_frames = ExtResource("2_3f206")
+animation = &"walk_down"

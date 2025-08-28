@@ -1,0 +1,214 @@
+[gd_scene load_steps=12 format=3 uid="uid://bi3dnbop5hfud"]
+
+[ext_resource type="PackedScene" uid="uid://d1gedk8oy6ty6" path="res://Scenary/Grid.tscn" id="1_bfhg0"]
+[ext_resource type="Script" path="res://Scripts/Main.gd" id="1_xswjk"]
+[ext_resource type="PackedScene" uid="uid://2x3bpsc5a0p4" path="res://Scenary/Unit.tscn" id="3_gv83g"]
+[ext_resource type="Script" path="res://Scripts/UnitLoader.gd" id="5_gw3gh"]
+[ext_resource type="Script" path="res://Scripts/Camera.gd" id="5_mycm3"]
+[ext_resource type="Script" path="res://Scripts/GameManager.gd" id="5_qw28r"]
+[ext_resource type="Script" path="res://Scripts/BuildingManager.gd" id="6_b7bfi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uof4i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l1jrk"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.6, 0.6, 0.6, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48g3j"]
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cnmoi"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_xswjk")
+metadata/_edit_horizontal_guides_ = [541.0]
+
+[node name="Grid" parent="." instance=ExtResource("1_bfhg0")]
+layer_1/tile_data = PackedInt32Array(-65539, 458752, 0, -3, 589824, 0, 65533, 327680, 0, 131069, 393216, 0, -65538, 458752, 0, -2, 262144, 0, 65534, 262144, 0, 131070, 327680, 0, -131071, 458752, 0, -65535, 524288, 0, 1, 458752, 0, 65537, 327680, 0, -131070, 589824, 0, -65534, 327680, 0, 2, 458752, 0, 65538, 262144, 0, -393215, 327680, 0, -327679, 393216, 0, -262143, 458752, 0, -196607, 524288, 0, -393214, 393216, 0, -327678, 393216, 0, -262142, 458752, 0, -196606, 458752, 0, -393213, 327680, 0, -327677, 262144, 0, -262141, 327680, 0, -196605, 589824, 0, -131069, 327680, 0, -393212, 393216, 0, -327676, 327680, 0, -262140, 327680, 0, -196604, 327680, 0, -131068, 589824, 0, -393211, 458752, 0, -327675, 524288, 0, -262139, 589824, 0, -196603, 589824, 0, -131067, 524288, 0, -393210, 524288, 0, -327674, 262144, 0, -262138, 524288, 0, -196602, 589824, 0, -131066, 262144, 0, -393209, 589824, 0, -327673, 458752, 0, -262137, 458752, 0, -196601, 524288, 0, -131065, 262144, 0, -65533, 458752, 0, 3, 262144, 0, 65539, 393216, 0, -65532, 589824, 0, 4, 524288, 0, 65540, 327680, 0, -65531, 262144, 0, 5, 327680, 0, 65541, 524288, 0, -65530, 393216, 0, 6, 589824, 0, 65542, 458752, 0, 7, 589824, 0, 8, 458752, 0, -393222, 327680, 0, -327686, 458752, 0, -262150, 393216, 0, -196614, 458752, 0, -131078, 262144, 0, -393221, 458752, 0, -327685, 262144, 0, -262149, 262144, 0, -196613, 524288, 0, -131077, 262144, 0, -393220, 262144, 0, -327684, 589824, 0, -262148, 327680, 0, -196612, 393216, 0, -131076, 589824, 0, -393219, 524288, 0, -327683, 524288, 0, -262147, 524288, 0, -196611, 262144, 0, -131075, 524288, 0, -393218, 589824, 0, -327682, 393216, 0, -262146, 589824, 0, -196610, 327680, 0, -131074, 393216, 0, -65541, 524288, 0, -5, 589824, 0, 65531, 458752, 0, 131067, 327680, 0, 196603, 589824, 0, -65540, 589824, 0, -4, 262144, 0, 65532, 458752, 0, 131068, 589824, 0, 196604, 393216, 0, 196605, 393216, 0, 131066, 524288, 0, 196602, 327680, 0, 262139, 458752, 0, 327675, 458752, 0, 393211, 262144, 0, 262140, 589824, 0, 327676, 458752, 0, 393212, 393216, 0, 196611, 458752, 0, 262147, 589824, 0, 327683, 524288, 0, 393219, 458752, 0, 196612, 589824, 0, 262148, 393216, 0, 327684, 524288, 0, 393220, 262144, 0, 196613, 327680, 0, 262149, 393216, 0, 327685, 589824, 0, 393221, 524288, 0, 196614, 393216, 0, 262150, 327680, 0, 327686, 458752, 0, 393222, 327680, 0, 196615, 262144, 0, 262151, 327680, 0, 327687, 262144, 0, 393223, 524288, 0, 196616, 262144, 0, 262152, 589824, 0, 327688, 524288, 0, 393224, 393216, 0, 131077, 524288, 0, 131078, 589824, 0, -589823, 393216, 0, -524287, 524288, 0, -524286, 458752, 0, -589821, 589824, 0, -524285, 589824, 0, -589831, 327680, 0, -524295, 327680, 0, -589830, 458752, 0, -524294, 589824, 0, -589829, 524288, 0, -524293, 524288, 0, -589828, 524288, 0, -524292, 458752, 0, -589827, 393216, 0, -524291, 589824, 0, -589826, 458752, 0, -524290, 327680, 0, -524281, 524288, 0, -589817, 589824, 0, -655353, 393216, 0, -720889, 458752, 0, -655357, 524288, 0, -720893, 393216, 0, -458746, 393216, 0, -458747, 393216, 0, -458748, 458752, 0, -458745, 327680, 0, -720892, 327680, 0, -720891, 589824, 0, -720890, 393216, 0)
+
+[node name="UnitManager" type="Node" parent="."]
+
+[node name="Soldado" parent="UnitManager" groups=["unidades_aliadas"] instance=ExtResource("3_gv83g")]
+position = Vector2(-470, 113)
+unit_id = "nuke"
+
+[node name="Soldado3" parent="UnitManager" groups=["unidades_aliadas"] instance=ExtResource("3_gv83g")]
+position = Vector2(554, -79)
+
+[node name="Soldado4" parent="UnitManager" groups=["unidades_aliadas"] instance=ExtResource("3_gv83g")]
+position = Vector2(314, -251)
+unit_id = "flamethrower"
+
+[node name="Soldado2" parent="UnitManager" groups=["unidades_enemigas"] instance=ExtResource("3_gv83g")]
+position = Vector2(-246, 219)
+unit_id = "flamethrower"
+
+[node name="Soldado7" parent="UnitManager" groups=["unidades_enemigas"] instance=ExtResource("3_gv83g")]
+position = Vector2(-225, -167)
+unit_id = "flamethrower"
+
+[node name="Soldado5" parent="UnitManager" groups=["unidades_enemigas"] instance=ExtResource("3_gv83g")]
+position = Vector2(133, 171)
+
+[node name="Soldado6" parent="UnitManager" groups=["unidades_enemigas"] instance=ExtResource("3_gv83g")]
+position = Vector2(372, -362)
+
+[node name="UnitLoader" type="Node" parent="."]
+script = ExtResource("5_gw3gh")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -106.0
+offset_right = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="LeftPanel" type="Panel" parent="CanvasLayer/UI/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_uof4i")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI/VBoxContainer/LeftPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LA" type="Button" parent="CanvasLayer/UI/VBoxContainer/LeftPanel/HBoxContainer"]
+layout_mode = 2
+text = "Light
+attack"
+
+[node name="HA" type="Button" parent="CanvasLayer/UI/VBoxContainer/LeftPanel/HBoxContainer"]
+layout_mode = 2
+text = "Heavy
+attack"
+
+[node name="Action" type="Panel" parent="CanvasLayer/UI/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_l1jrk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UI/VBoxContainer/Action"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 13.0
+offset_right = 371.0
+offset_bottom = 81.0
+
+[node name="name" type="Label" parent="CanvasLayer/UI/VBoxContainer/Action/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 15
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/UI/VBoxContainer/Action/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_styles/fill = SubResource("StyleBoxFlat_48g3j")
+
+[node name="Label" type="Label" parent="CanvasLayer/UI/VBoxContainer/Action/VBoxContainer/ProgressBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "1/1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Attack" type="Label" parent="CanvasLayer/UI/VBoxContainer/Action/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RightPanel" type="Panel" parent="CanvasLayer/UI/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_cnmoi")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI/VBoxContainer/RightPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EndTurn" type="Button" parent="CanvasLayer/UI/VBoxContainer/RightPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "End Turn"
+
+[node name="BuildModeTest" type="Button" parent="CanvasLayer/UI/VBoxContainer/RightPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Build mode test
+"
+
+[node name="warning" type="Label" parent="CanvasLayer/UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -120.0
+offset_bottom = -97.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+text = "TestMessage"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("5_mycm3")
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("5_qw28r")
+
+[node name="BuildingManager" type="Node" parent="."]
+script = ExtResource("6_b7bfi")
+
+[connection signal="button_down" from="CanvasLayer/UI/VBoxContainer/LeftPanel/HBoxContainer/LA" to="." method="_on_ButtonLightAttack_pressed"]
+[connection signal="button_down" from="CanvasLayer/UI/VBoxContainer/LeftPanel/HBoxContainer/HA" to="." method="_on_ButtonHeavyAttack_pressed"]
+[connection signal="button_down" from="CanvasLayer/UI/VBoxContainer/RightPanel/HBoxContainer/EndTurn" to="." method="_on_ButtonEndTurn_pressed"]
+[connection signal="button_down" from="CanvasLayer/UI/VBoxContainer/RightPanel/HBoxContainer/BuildModeTest" to="." method="BuildMode"]
